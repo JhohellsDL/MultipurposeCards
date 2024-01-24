@@ -4,6 +4,7 @@ import android.animation.Animator
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import android.animation.ValueAnimator
+import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -25,14 +26,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.buttonAgain.setOnClickListener {
-            binding.imageSun.fadeInAndMoveUp()
-            binding.imageSun.moveAndRotate()
-
-            binding.textDescription.fadeInAndMoveRight()
-
-            moveTwoText(binding.textTemperature, binding.textDate, 26)
-            moveTwoText(binding.textHumidity, binding.labelHumidity, 68)
-            moveTwoText(binding.textWind, binding.labelWind, 36)
+            startActivity(Intent(this@MainActivity, MainActivity2::class.java))
         }
 
     }
